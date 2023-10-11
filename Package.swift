@@ -5,7 +5,7 @@ import PackageDescription
 let package = Package(
     name: "MGSwipeTableCell",
     platforms: [
-        .iOS(.v9),
+        .iOS(.v14),
     ],
     products: [
         .library(
@@ -17,13 +17,10 @@ let package = Package(
     targets: [
         .target(
             name: "MGSwipeTableCell",
-            path: "MGSwipeTableCell",
-            exclude: [
-                "Info.plist",
-            ],
-            linkerSettings: [
-                .linkedFramework("UIKit"),
-            ]
-        ),
+            path: "Sources/MGSwipeTableCell",
+            publicHeadersPath: "include",
+            cSettings: [
+              .headerSearchPath("include"),
+            ]),
     ]
 )
